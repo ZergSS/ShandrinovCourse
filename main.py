@@ -1,16 +1,10 @@
-# This is a sample Python script.
+import platform
+import sys
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+info = "OS info is \n{}\n\nPython version is {} {}".format(
+    platform.uname(), sys.version, platform.architecture()
+)
+print(info)
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+with open("os_info.txt", 'w') as inf:
+    inf.write(info)
