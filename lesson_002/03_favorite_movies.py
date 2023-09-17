@@ -15,3 +15,8 @@ my_favorite_movies = 'Терминатор, Пятый элемент, Ават�
 # Запятая не должна выводиться.
 
 # TODO здесь ваш код
+print(my_favorite_movies[0:10],
+      my_favorite_movies[42:57],
+      my_favorite_movies[12:25],
+      my_favorite_movies[35:40], sep="\n"
+      )
