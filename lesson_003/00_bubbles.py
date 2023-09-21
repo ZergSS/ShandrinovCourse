@@ -11,12 +11,12 @@ radius0 = 25
 x = 300
 y = 300
 
+for i in [10, 20, 30]:
+    sd.circle(center_position=sd.get_point(x, y), radius=radius0 + i, width=2)
 
-# for i in [10, 20, 30]:
-#     sd.circle(center_position=sd.get_point(x, y), radius=radius0+i, width = 2)
 
 # Написать функцию рисования пузырька, принммающую 2 (или более) параметра: точка рисовании и шаг
-def draw_circle(x: float, y: float, radius: float, step: int, num: int, color=sd.COLOR_ORANGE):
+def draw_circle(x, y, radius: float, step: int, num: int, color=sd.COLOR_ORANGE):
     x0 = x
     y0 = y
     for i in range(0, num):
@@ -25,12 +25,13 @@ def draw_circle(x: float, y: float, radius: float, step: int, num: int, color=sd
 
 
 # Нарисовать 10 пузырьков в ряд
-# draw_circle(x, y, radius0, step=radius0, num=10)
+draw_circle(x, y, radius0, step=radius0, num=10)
+
 # Нарисовать три ряда по 10 пузырьков
 
-# for i in range(0, 3):
-#     draw_circle(x, y, radius0, step=radius0, num=10)
-#     y += 2 * radius0
+for i in range(0, 3):
+    draw_circle(x, y, radius0, step=radius0, num=10)
+    y += 2 * radius0
 
 
 # Нарисовать 100 пузырьков в произвольных местах экрана случайными цветами

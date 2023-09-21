@@ -11,3 +11,10 @@
 a, b = 179, 37
 
 # TODO здесь ваш код
+
+while a > b:
+    d = a / b
+    a = b
+    b = a - d
+
+print(d)

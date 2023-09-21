@@ -10,5 +10,14 @@
 #   Студенту надо попросить ХХХ.ХХ рублей
 
 educational_grant, expenses = 10000, 12000
-
+result = 0
 # TODO здесь ваш код
+m = 0
+while m != 10:
+    if m == 0:
+        result += expenses - educational_grant
+    else:
+        expenses = expenses + expenses*0.03
+        result += expenses - educational_grant
+    m += 1
+print(result)
