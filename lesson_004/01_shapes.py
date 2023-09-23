@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import simple_draw as sd
+sd.resolution = (1200, 1000)
 
 # Часть 1.
 # Написать функции рисования равносторонних геометрических фигур:
@@ -28,6 +29,54 @@ import simple_draw as sd
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
 
 # TODO здесь ваш код
+x=600
+y=200
+def draw_figure(figure=None, point=sd.random_point(), angle=0, length=100):
+    """
+    :param angle: угол наклона вектора
+    :type length: длина вектора
+    :param point: начальная точка вектора
+    :param length: длина вектора
+    :return: равносторонняя фигура
+    """
+    point = point
+    if figure == 'треугольник':
+        for a in range(3):
+            v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+            v1.draw()
+            angle += 120
+            point = v1.end_point
+
+    elif figure == 'квадрат':
+        for a in range(4):
+            v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+            v1.draw()
+            angle += 90
+            point = v1.end_point
+
+    elif figure == 'шестиугольник':
+        for a in range(6):
+            v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+            v1.draw()
+            angle += 60
+            point = v1.end_point
+
+    elif figure == 'пятиугольник':
+        for a in range(5):
+            v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+            v1.draw()
+            angle += 72
+            point = v1.end_point
+    else:
+        print("Укажите фигуру и попробуйте еще раз")
+
+
+figure_list = ['треугольник', 'квадрат', 'пятиугольник', 'шестиугольник', '']
+
+for fig in figure_list:
+    draw_figure(point=sd.random_point(), angle=0, length=100, figure=fig)
+
+
 
 # Часть 1-бис.
 # Попробуйте прикинуть обьем работы, если нужно будет внести изменения в этот код.
